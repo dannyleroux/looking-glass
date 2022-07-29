@@ -81,11 +81,11 @@ final class Mikrotik extends Router {
       $commands[] = $cmd6->add('where', 'bgp-as-path~'.quote($parameter.'\$'));
     }
     if (!$this->config['disable_ipv4']) {
-      $cmd4 = (clone $cmd)->add('ip route print');
-      if ($this->config['bgp_detail']) {
-        $cmd4->add('detail');
-      }
-      $commands[] = $cmd4->add('where', 'bgp-as-path~'.quote($parameter.'\$'));
+      $cmd4 = (clone $cmd)->add('routing route print detail');
+      //if ($this->config['bgp_detail']) {
+      //  $cmd4->add('detail');
+      //}
+      $commands[] = $cmd4->add('where', 'bgp.as-path~'.quote($parameter));
     }
 
     return $commands;
