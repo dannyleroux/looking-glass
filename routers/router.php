@@ -93,7 +93,7 @@ abstract class Router {
         $filtered .= $line."\n";
       }
     }
-
+    $filtered = end(explode("\n\n",trim($filtered)));
     return preg_replace('/(?:\n|\r\n|\r)$/D', '', $filtered);
   }
 
