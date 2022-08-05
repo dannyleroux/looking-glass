@@ -52,7 +52,7 @@ abstract class Router {
 
     // Set defaults if not present
     if (!isset($this->config['timeout'])) {
-      $this->config['timeout'] = 30;
+      $this->config['timeout'] = 60;
     }
     if (!isset($this->config['disable_ipv6'])) {
       $this->config['disable_ipv6'] = false;
